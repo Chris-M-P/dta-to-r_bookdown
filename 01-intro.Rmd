@@ -1,11 +1,15 @@
-# Hello bookdown 
+# Overview
 
 All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
 
-## A section
+## Motivation
 
-All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+I work in a Medical School in which almost everyone doing stats or quantitative analysis uses Stata. In recent years I have been favouring R for all my stats tasks (cleaning, analysis, reporting) and a growing number of my colleagues are using R for at least some of their work. It's important that we are all able to work on the most up-to-date versions of datasets, even if we prefer to do so in R rather than Stata. It's also important that colleagues using Stata can use the fruits of our labour - i.e. data outputs!
 
-### An unnumbered section {-}
+As R users we can use several packages to import native Stata data files (.dta files) into R. `haven` is arguably the most important of these and this is now included in RStudio by default. Development of its predecessor, `foreign`, has now stopped.
 
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
+Importing .dta files into R is obviously a crucial 1st step, but in order to work efficiently with the data in R further steps are needed. Those next steps depend on whether you'll be exporting data again for analysis in Stata. For simplicity, I've assumed initially that you'll do all your data manipulation and analysis in R, with no export back to .dta. Later in this guide I've outlined how you can export R dataframes as .dta files. Some data manipulation tasks can affect the exported .dta files and I show how to tailor your import -> manipulation -> analysis workflow to best suit your needs.
+
+Since `haven` is so effective it might seem sensible to simply import .dta files as needed. If the files are fairly small then this is probably the best idea. However, as the files become larger (wider rather than longer, I think) then importing the same .dta file again becomes time consuming. With this in mind I've also outlined some R-friendly file formats for storing large and very large datasets which allow rapid access to data.
+
+

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>An R User’s guide to importing and exporting Stata .dta files</title>
+  <title>Chapter 2 Overview | An R User’s guide to importing and exporting Stata .dta files</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="An R User’s guide to importing and exporting Stata .dta files" />
+  <meta property="og:title" content="Chapter 2 Overview | An R User’s guide to importing and exporting Stata .dta files" />
   <meta property="og:type" content="book" />
   
   
@@ -20,7 +20,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="An R User’s guide to importing and exporting Stata .dta files" />
+  <meta name="twitter:title" content="Chapter 2 Overview | An R User’s guide to importing and exporting Stata .dta files" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -37,8 +37,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="overview.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="importing-.dta-files.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -219,35 +219,15 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">An R User’s guide to importing and exporting Stata .dta files</h1>
-<p class="author"><em>Chris Penfold</em></p>
-<p class="date"><em>2021-09-14</em></p>
-</div>
-<div id="about" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> About</h1>
-<p>This is a guide to importing Stata data files into R and working in a Stata-R collaborative environment.</p>
-<div id="usage" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Usage</h2>
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
-</div>
-<div id="render-book" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Render book</h2>
-<p>You can render the HTML version of this example book without changing anything:</p>
-<ol style="list-style-type: decimal">
-<li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>
-<li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
-</ol>
-<p>Or build the book from the R console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
-<p>To render this example to PDF as a <code>bookdown::pdf_book</code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
-</div>
-<div id="preview-book" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Preview book</h2>
-<p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book,” or from the R console:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
+<div id="overview" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Overview</h1>
+<p>All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (<code>#</code>) per .Rmd file.</p>
+<div id="motivation" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Motivation</h2>
+<p>I work in a Medical School in which almost everyone doing stats or quantitative analysis uses Stata. In recent years I have been favouring R for all my stats tasks (cleaning, analysis, reporting) and a growing number of my colleagues are using R for at least some of their work. It’s important that we are all able to work on the most up-to-date versions of datasets, even if we prefer to do so in R rather than Stata. It’s also important that colleagues using Stata can use the fruits of our labour - i.e. data outputs!</p>
+<p>As R users we can use several packages to import native Stata data files (.dta files) into R. <code>haven</code> is arguably the most important of these and this is now included in RStudio by default. Development of its predecessor, <code>foreign</code>, has now stopped.</p>
+<p>Importing .dta files into R is obviously a crucial 1st step, but in order to work efficiently with the data in R further steps are needed. Those next steps depend on whether you’ll be exporting data again for analysis in Stata. For simplicity, I’ve assumed initially that you’ll do all your data manipulation and analysis in R, with no export back to .dta. Later in this guide I’ve outlined how you can export R dataframes as .dta files. Some data manipulation tasks can affect the exported .dta files and I show how to tailor your import -&gt; manipulation -&gt; analysis workflow to best suit your needs.</p>
+<p>Since <code>haven</code> is so effective it might seem sensible to simply import .dta files as needed. If the files are fairly small then this is probably the best idea. However, as the files become larger (wider rather than longer, I think) then importing the same .dta file again becomes time consuming. With this in mind I’ve also outlined some R-friendly file formats for storing large and very large datasets which allow rapid access to data.</p>
 
 </div>
 </div>
@@ -256,8 +236,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-
-<a href="overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="importing-.dta-files.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -288,7 +268,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
 "text": "Edit"
 },
 "history": {
